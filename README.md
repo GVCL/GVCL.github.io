@@ -1,2 +1,0 @@
-# GVCL.github.io
-BCA

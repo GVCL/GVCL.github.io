@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Bar Chart Digitizer</title>
+<!--         <title>Bar Chart Analyzer</title> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/style.css">
+
+    </head>
+    <body>
+    <div class="container">
+      <div class="toppane" align="center">
+          <div class="divh1"><h1>Bar Chart Digitizer</h1></div>
+<!--           <button class="button" id="hideme">Our Approach</button>
+          <div id="arch" style="display:none;" width="100%"><img src="/static/data/tv_approach.png"  style="width:100%"></div> -->
+<!--           <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
+          <button class="button" id="hideme">System Architecture Diagram</button>
+          <button class="button" id="hideved">Image Annotation <br />(Demo Video)</button>
+          <div id="arch" style="display:none;" width="100%"><img src="/static/data/teaser.png"  style="width:100%"></div>
+          <div id="demoved" style="display:none;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/t3rlG_v8sMs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div> -->
+      </div>
+
+      <div class="leftpane" align="center">
+          <div class="divh1"><h1>Chart Images</h1></div>
+          <img src="/static/data/Test/GroupedBar/gb1/gb1.png " onclick="myFunction(this);">
+          <img src="/static/data/Test/GroupedBar/gb2/gb2.png " onclick="myFunction(this);">
+          <img src="/static/data/Test/GroupedBar/gb3/gb3.png " onclick="myFunction(this);">
+          <img src="/static/data/Test/GroupedBar/gb4/gb4.png " onclick="myFunction(this);">
+          <img src='/static/data/Test/horizontal_grouped_bar/h_gb02/h_gb02.png' onclick="myFunction(this);">
+          <img src="/static/data/Test/horizontal_grouped_bar/h_gb03/h_gb03.png" onclick="myFunction(this);">
+          <img src="/static/data/Test/HorizontalStackedBar/hsb3/hsb3.png" onclick="myFunction(this);">
+          <img src="/static/data/Test/vertical_stacked_bar/sb01/sb01.png" onclick="myFunction(this);">
+          <img src="/static/data/Test/vertical_stacked_bar/sb02/sb02.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist1/hist1.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist2/hist2.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist4/hist4.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist5/hist5.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/Histogram/hist6/hist6.png " onclick="myFunction(this);">
+        <img src="/static/data/Test/HorizontalBar/hb1/hb1.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/HorizontalBar/hb2/hb2.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/HorizontalBar/hb3/hb3.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/HorizontalBar/hb4/hb4.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/HorizontalBar/hb5/hb5.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/vertical_simple_bar/bc01/bc01.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/vertical_simple_bar/bc02/bc02.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/vertical_simple_bar/bc03/bc03.png" onclick="myFunction(this);">
+        <img src="/static/data/Test/vertical_simple_bar/bc04/bc04.png" onclick="myFunction(this);">
+      </div>
+
+      <div class="rightpane" align="center">
+              <div class="divh1" height="80px"><h1>Control Panel</h1></div>
+              <input type="checkbox" id="corner" onclick="dispPage()"><label font-size="16px">Toggle Display Original Image</label>
+              <label font-size="16px">with/without Extracted Corner Points</label>
+              <br>
+              <input type="checkbox" id="reconstruct" onclick="dispPage()"><label font-size="16px">Display Reconstructed Chart</label>
+              <br><br>
+<!--           <br> -->
+              <label font-size="16px">Color map for chart reconstruction</label>
+              <select id="myDropdown" class="dropbtn" onchange="dispPage()">
+                <option value="grey">Grayscale color map</option>
+                <option value="per">Perceptually uniform color map</option>
+                <option value="qual">Qualitative color map</option>
+              </select>
+              <br><br>
+<!--               <br><br> -->
+              <button class="button" onclick="getCSV()">Download</br>Extracted Data(csv)</button>
+              <br><br>
+<!--               <br> -->
+              <button class="button" onclick="getCredit()">Credits</button>
+              <div class="info" id="credit"  align="center" style="display:none;">
+              <p><center><span style="font-weight:bold" >Komal Dadhich, Siri Chandana Daggubati, Jaya Sreevalsan-Nair <br />Graphics-Visualization-Computing Lab</center></span></p>
+                  <p>International Institute of Information Technology Bangalore</p>
+<!--                  <br /> 26/C, Hosur Rd, Electronics City Phase 1, Electronic City, <br />Bengaluru, Karnataka 560100</p>-->
+              <p><span>Email:</span> <a href="mailto:jnair@iiitb.ac.in">jnair@iiitb.ac.in, komal.dadhich@iiitb.org, daggubati.sirichandana@iiitb.org</a></p>
+              <p><span>Website:</span> <a href="https://www.iiitb.ac.in/GVCL/">https://www.iiitb.ac.in/GVCL/</a></p>
+              <p>This work has been supported by the Machine Intelligence and Robotics (MINRO) Center grant to IIIT Bangalore from the Government of Karnataka. The problem statement has been motivated by the theme of disabilities at the E-Health Research Center (EHRC), IIIT Bangalore.
+              </p>
+          </div>
+
+      </div>
+
+
+      <div class="middlepane" align="center">
+        <div class="im">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:50%">
+            <img id="reconsImg" style="width:50%">
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+
+    </body>
+</html>
+
+
